@@ -10,6 +10,16 @@ const checkPin = (...code) => code.join('') === EXPECTED_PIN;
 //
 // For hint use https://github.com/HowProgrammingWorks/Cheatsheet
 
-const press = null;
+const press = arg => ({
+  args: [arg],
+  press(arg) {
+    this.args.push(arg);
+    if (this.args.length < 4) {
+      return this;
+    } else {
+      return checkPin(...this.args);
+    }
+  }
+});
 
 module.exports = { press };

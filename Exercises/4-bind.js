@@ -15,11 +15,7 @@ const H = (exp, ...args) => {
   return Math.pow(avg, (1 / exp));
 };
 
-// Use method bind() to create new functions from function H.
-// Create function `average` that returns arithmetic mean (H₁) of the arguments.
-// Create function `rootMeanSquare` that returns quadratic mean (H₂).
-
-const average = null;
-const rootMeanSquare = null;
+const average = H.bind(null, 1);
+const rootMeanSquare = H.bind(null, 2);
 
 module.exports = { average, rootMeanSquare };
